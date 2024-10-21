@@ -8922,40 +8922,28 @@ Name: TMIN, dtype: float64</pre>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [238]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [251]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">two_hp_games</span> <span class="o">=</span> <span class="n">weather_sav_df</span><span class="p">[(</span><span class="n">weather_sav_df</span><span class="p">[</span><span class="s1">'player_name'</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">([</span><span class="s1">'King, Michael'</span><span class="p">,</span> <span class="s1">'Cole, Gerrit'</span><span class="p">]))</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">weather_sav_df</span><span class="p">[</span><span class="s1">'game_date'</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">([</span><span class="s1">'2023-09-21'</span><span class="p">,</span> <span class="s1">'2023-09-20'</span><span class="p">]))]</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">dates</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">([</span><span class="s1">'2023-09-21'</span><span class="p">,</span> <span class="s1">'2023-09-20'</span><span class="p">])</span>
+
+<span class="n">two_hp_games</span> <span class="o">=</span> <span class="n">weather_sav_df</span><span class="p">[(</span><span class="n">weather_sav_df</span><span class="p">[</span><span class="s1">'player_name'</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">([</span><span class="s1">'King, Michael'</span><span class="p">,</span> <span class="s1">'Cole, Gerrit'</span><span class="p">]))</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">weather_sav_df</span><span class="p">[</span><span class="s1">'game_date'</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">dates</span><span class="p">))]</span>
 </pre></div>
 </div>
 </div>
 </div>
 </div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>/var/folders/xb/kvztmq1j2mz23r64f2dbx0mh0000gp/T/ipykernel_68804/2380537726.py:1: FutureWarning: The behavior of 'isin' with dtype=datetime64[ns] and castable values (e.g. strings) is deprecated. In a future version, these will not be considered matching by isin. Explicitly cast to the appropriate dtype before calling isin instead.
-  two_hp_games = weather_sav_df[(weather_sav_df['player_name'].isin(['King, Michael', 'Cole, Gerrit'])) &amp; (weather_sav_df['game_date'].isin(['2023-09-21', '2023-09-20']))]
-</pre>
-</div>
-</div>
-</div>
-</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [239]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [252]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">two_hp_games</span><span class="p">[</span><span class="s1">'player_name'</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
@@ -8969,7 +8957,7 @@ Name: TMIN, dtype: float64</pre>
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[239]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[252]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
 <pre>array(['Cole, Gerrit', 'King, Michael'], dtype=object)</pre>
 </div>
@@ -8981,7 +8969,7 @@ Name: TMIN, dtype: float64</pre>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [240]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [253]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">garrit_df</span> <span class="o">=</span> <span class="n">two_hp_games</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">'player_name == "Cole, Gerrit"'</span><span class="p">)</span>
@@ -9007,7 +8995,7 @@ Name: TMIN, dtype: float64</pre>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [241]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [254]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">innings_outs_sorted_g_df</span> <span class="o">=</span> <span class="n">garrit_df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="p">[</span><span class="s1">'inning'</span><span class="p">,</span> <span class="s1">'outs_when_up'</span><span class="p">])</span>
@@ -9020,41 +9008,21 @@ Name: TMIN, dtype: float64</pre>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [242]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [256]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">f_seams_g_df</span><span class="p">[</span><span class="s1">'progression'</span><span class="p">]</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">f_seams_g_df</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
-<span class="n">f_seams_k_df</span><span class="p">[</span><span class="s1">'progression'</span><span class="p">]</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">f_seams_k_df</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Create explicit copies of the slices to avoid SettingWithCopyWarning</span>
+<span class="n">f_seams_g_df</span> <span class="o">=</span> <span class="n">f_seams_g_df</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">f_seams_k_df</span> <span class="o">=</span> <span class="n">f_seams_k_df</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
+<span class="n">f_seams_g_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s1">'progression'</span><span class="p">]</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">f_seams_g_df</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">f_seams_k_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s1">'progression'</span><span class="p">]</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">f_seams_k_df</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
 </pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>/var/folders/xb/kvztmq1j2mz23r64f2dbx0mh0000gp/T/ipykernel_68804/4144264645.py:1: SettingWithCopyWarning: 
-A value is trying to be set on a copy of a slice from a DataFrame.
-Try using .loc[row_indexer,col_indexer] = value instead
-
-See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
-  f_seams_g_df['progression'] = range(1, len(f_seams_g_df) + 1)
-/var/folders/xb/kvztmq1j2mz23r64f2dbx0mh0000gp/T/ipykernel_68804/4144264645.py:2: SettingWithCopyWarning: 
-A value is trying to be set on a copy of a slice from a DataFrame.
-Try using .loc[row_indexer,col_indexer] = value instead
-
-See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
-  f_seams_k_df['progression'] = range(1, len(f_seams_k_df) + 1)
-</pre>
 </div>
 </div>
 </div>
@@ -9080,43 +9048,6 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">concat_two_games</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">f_seams_g_df</span><span class="p">,</span> <span class="n">f_seams_k_df</span><span class="p">])</span>
 </pre></div>
-</div>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [244]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">concat_two_games</span><span class="p">[</span><span class="s1">'player_name'</span><span class="p">]</span> <span class="o">==</span> <span class="s1">'King, Michael'</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[244]:</div>
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
-<pre>4154    False
-4168    False
-4107    False
-4120    False
-4147    False
-        ...  
-4272     True
-4256     True
-4262     True
-4247     True
-4255     True
-Name: player_name, Length: 70, dtype: bool</pre>
 </div>
 </div>
 </div>
